@@ -1,12 +1,13 @@
 <%= form_for(task) do |f| %>
 
 <% if task.errors.any? %>
-
+    
+    <div class="alert alert-warning">
     <div id="error_explanation">
-      <h2>
+      <h3>
 <%= pluralize(task.errors.count,"error") %>
 prohibited this task from being saved:
-      </h2>
+      </h3>
 
       <ul>
 <% task.errors.full_messages.each do |task| %>
@@ -17,26 +18,24 @@ prohibited this task from being saved:
         
 <% end %>
     </div>
-  
+  </div>
 <% end %>
 
-
+<div class="row">
+  <div class= "form-group">
+  <div class="col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
+  <%= f.label :content, 'タスク' %>
   
-<%= f.label :content, 'タスク' %>
-
-  
-<%= f.text_field :content %>
-
-
-  
-<%= f.label :status, 'ステータス' %>
-
-  
-<%= f.text_field :status %>
-
-
-  
-<%= f.submit '投稿' %>
-
+  <%= f.text_field :content, class: 'form-control' %>
+  </div>
+  </div>
+  <div class= "form-group">
+  <div class="col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">  
+  <%= f.label :status, 'ステータス' %>
+  <%= f.text_field :status, class: 'form-control' %>
+  </div>
+  </div>
+  </div>
+<%= f.submit '投稿', class: 'btn btn-primary' %>
+</div>
 <% end %>
-
