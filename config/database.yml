@@ -52,6 +52,6 @@ production:
   encoding: unicode
   pool: 5
   database: tasklist_production
-  username: cqpmvsaclshptm
+  username: tasklist
   password: <%= ENV['TASKLIST_DATABASE_PASSWORD'] %>
   
