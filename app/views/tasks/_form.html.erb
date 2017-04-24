@@ -1,6 +1,6 @@
-<%= form_for(task) do |f| %>
+<%= form_for(@task) do |f| %>
 
-<% if task.errors.any? %>
+<% if tasks.errors.any? %>
     
     <div class="alert alert-warning">
     <div id="error_explanation">
